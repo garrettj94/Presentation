@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Department } = require('../models');
 
-router.get('/', async (req, res) => {
+router.get('/homepage', async (req, res) => {
     try {
         console.log('homeRoute')
         const departmentData = await Department.findAll();
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     // if (req.session.logged_in) {
     //     res.redirect('/');
     //     return
@@ -29,6 +29,12 @@ router.get('/createdepartment', (req, res) => {
     res.render('new')
 })
 
-router.get('/')
+router.get('/secondhomepage', (req, res) => {
+    res.render('')
+})
+
+router.get('/department', (req, res) => {
+    res.render('createddpt')
+})
 
 module.exports = router;
