@@ -37,4 +37,12 @@ router.get('/department', (req, res) => {
     res.render('createddpt')
 })
 
+router.get('/addemployee', (req, res) => {
+    res.render('employee')
+})
+
+router.get('/seconddepartment', (req, res) => {
+    res.render('createddptTwo')
+})
+
 module.exports = router;
