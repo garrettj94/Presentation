@@ -32,3 +32,9 @@ const homepageRedirect = (event) => {
 }
 
 document.querySelector('#newdepartmentBtn').addEventListener('click', homepageRedirect);
+
+const redirect = (event) => {
+    event.preventDefault();
+    document.location.replace('/seconddepartment');
+}
+document.querySelector('#submitbtn').addEventListener('click', redirect)
