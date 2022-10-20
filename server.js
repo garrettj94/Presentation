@@ -42,33 +42,33 @@ app.use(routes);
 
 //routes
 
-// app.get('/', (req, res) => {
+app.get('/', (req, res) => {
     
-//     const dataFromDatabase = [
-//         {
-//             post_text: 'I am hungry',
-//             post_user: 'Ralph'
-//         },
-//         {
-//             post_text: 'I am TIRED',
-//             post_user: 'Bob'
-//         },
-//         {
-//             post_text: 'I am happy',
-//             post_user: 'Claire'
-//         },
-//         {
-//             post_text: 'I am happy',
-//             post_user: 'Claire'
-//         },
-//     ]
+    const dataFromDatabase = [
+        {
+            post_text: 'I am hungry',
+            post_user: 'Ralph'
+        },
+        {
+            post_text: 'I am TIRED',
+            post_user: 'Bob'
+        },
+        {
+            post_text: 'I am happy',
+            post_user: 'Claire'
+        },
+        {
+            post_text: 'I am happy',
+            post_user: 'Claire'
+        },
+    ]
     
     
-//     res.render("login", {
-//         logged_in :true,
-//         posts: dataFromDatabase
-//     })
-// })
+    res.render("login", {
+        logged_in :true,
+        posts: dataFromDatabase
+    })
+})
 
 //run server
 // app.listen(PORT, (err) => {
