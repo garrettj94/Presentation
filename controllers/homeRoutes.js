@@ -1,18 +1,15 @@
 const router = require('express').Router();
-const { User } = require('../models');
-const withAuth = require('../utils');
+const { Department } = require('../models');
 
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const userData = await User.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
-        });
+        console.log('homeRoute')
+        const departmentData = await Department.findAll();
 
-        const users = userData.map((user) => user.get({ plain: true }));
+        const departments = departmentData.map((department) => department.get({ plain: true }));
 
         res.render('homepage', {
-            users,
+            departments,
             logged_in: req.session.logged_in,
         });
     } catch (err) {
@@ -20,13 +17,13 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/login', (req, res) => {
-    if (req.session.logged_in) {
-        res.redirect('/');
-        return
-    }
+// router.get('/login', (req, res) => {
+//     if (req.session.logged_in) {
+//         res.redirect('/');
+//         return
+//     }
 
-    res.render('login')
-});
+//     res.render('login')
+// });
 
 module.exports = router;

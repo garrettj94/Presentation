@@ -1,4 +1,4 @@
-async function signupRedirect (event) {
+function signupRedirect (event) {
     event.preventDefault();
     document.location.replace('/')
     console.log('Hi')
@@ -6,8 +6,9 @@ async function signupRedirect (event) {
 
 document.querySelector('#signupBtn').addEventListener('click', signupRedirect)
 
-const loginRedirect = async (event) => {
+const loginRedirect = (event) => {
     event.preventDefault();
+    console.log('loginRedirect')
     document.location.replace('/homepage')
 }
 
