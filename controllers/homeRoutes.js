@@ -30,7 +30,7 @@ router.get('/createdepartment', (req, res) => {
 })
 
 router.get('/secondhomepage', (req, res) => {
-    res.render('')
+    res.render('homepageTwo')
 })
 
 router.get('/department', (req, res) => {
