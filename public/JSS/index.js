@@ -13,3 +13,10 @@ const loginRedirect = (event) => {
 }
 
 document.querySelector('#loginBtn').addEventListener('click', loginRedirect);
+
+const homepageRedirect = (event) => {
+    event.preventDefault();
+    document.location.replace('/createdepartment')
+}
+
+document.querySelector('#newdepartmentBtn').addEventListener('click', homepageRedirect);
